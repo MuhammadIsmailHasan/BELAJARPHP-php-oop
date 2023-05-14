@@ -12,7 +12,7 @@ class Product {
 
     public function __construct(string $nama, int $harga)
     {
-        $this->nama = $nama;
+        $this->nama = strtoupper($nama);
         $this->harga = $harga;
     }
 
@@ -30,8 +30,23 @@ class Product {
 
 class dummyProduct extends Product 
 {
+    // konsep kurang benar
+    // ketika overriding constuct harus manggil parentnya
+    // menghindari terlewat jika ada kondisi yg wajib di run di parent
     public function __construct(string $nama)
     {
-        $this->nama = $nama; // dari product
+        $this->nama = $nama; 
+        // this->nama dari product, tapi tidak manggil construct product
+    }
+}
+
+class overridingProduct extends Product
+{
+    // konsep overriding construct
+    // arg boleh beda, tapi disarankan manggil parent
+    // tidak wajib tapi disarankan
+    public function __construct(string $nama)
+    {
+        echo "Ini construct overriding product : " . parent::__construct($nama, 10);
     }
 }
