@@ -3,11 +3,14 @@
 require_once __DIR__ . "/Helper/MathHelper.php";
 
 $math = new MathHelper();
-$math::$angka = 100;
-echo $math::$angka . PHP_EOL;
+MathHelper::$angka = 100;
+echo MathHelper::$angka . PHP_EOL;
 
-$math::$angka = 10;
-echo $math::$angka . PHP_EOL;
+MathHelper::$angka = 10;
+echo MathHelper::$angka . PHP_EOL;
 
-$sum = $math::helperSum(5,5,5);
+$sum = MathHelper::helperSum(5,5,5);
 echo $sum;
+
+// property dan function yang ada static akan nempel pada class
+// begitupun cara aksesnya langsung melalui class
