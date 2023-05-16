@@ -2,6 +2,6 @@
 
 class LoginRequest
 {
-    public string $usernama;
-    public string $password;
+    public ?string $usernama;
+    public ?string $password;
 }

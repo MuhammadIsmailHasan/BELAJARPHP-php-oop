@@ -10,7 +10,7 @@ require_once __DIR__ . "/ValidateException.php";
 
 class ValidateLoginRequest
 {
-    public function validate(LoginRequest $request) {
+    public function validateLogin(LoginRequest $request) {
         if (!isset($request->usernama)) {
             throw new ValidateException("usernama tidak boleh null (dari validate exception)");
         } else if (!isset($request->password)) {

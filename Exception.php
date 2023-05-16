@@ -18,7 +18,7 @@ $requestKosong->password = " ";
 // panggil dengan try catch
 $login = new ValidateLoginRequest();
 try {
-    $login->validate($requestNull);
+    $login->validateLogin($requestNull);
 } catch (ValidateException $th) {
     echo "errornya : {$th->getMessage()}" . PHP_EOL;
 } catch (Exception $th) {
@@ -26,7 +26,7 @@ try {
 }
 //atau 
 try {
-    $login->validate($requestKosong);
+    $login->validateLogin($requestKosong);
 } catch (ValidateException | Exception $th) {
     echo "errornya : {$th->getMessage()}" . PHP_EOL;
     var_dump($th->getTrace()); // untuk tracing detail errornya
